@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+   <body>
+        <table border="1">
+            <thead>
+                <td>Task</td>
+                <td>Status</td>
+            </thead>
+            {% for row in rows %}
+            <tr>
+               <td>{{row["task"]}}</td>               
+               <td>{{row["status"]}}</td>	
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        
+        <form action="/addlist" method="POST">
+            <input type="addlist" name="addlist" placeholder="New Task...">
+            <input type="submit" value="Add">
+        </form> 
+        <br><br>
+
+        <form action="/complete" method="POST">
+            <input type="complete" name="complete" placeholder="Enter Completed Task">
+            <input type="submit" value="Change">
+        </form>
+        <br><br>
+
+        <form action="/delete" method="POST">
+            <input type="delete" name="delete" placeholder="Enter Task to Remove">
+            <input type="submit" value="delete">
+        </form>
+        <br><br>
+
+    <a href = "/">Return Home</a>      
+   </body>
+</html>
